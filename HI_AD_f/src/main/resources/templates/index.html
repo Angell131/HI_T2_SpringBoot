@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <!-- Compiled and minified CSS -->
+  <!--<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">-->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" th:href="@{css/estilos.css}">
+  <title>Blablabla</title>
+</head>
+<body style="background-color: #212121;color: #fff;font-family: monospace, serif;letter-spacing: 0.05em;">
+<div style="align-items: center;margin-left: 85%; margin-top: 1%" >
+  <a class="btn btn-success" th:href="@{/login}">Log in</a>
+  <a class="btn btn-danger" th:href="@{/logout}">Log out</a>
+</div>
+
+<h1 style="color: lawngreen;text-align: center">Esta es la vista index.html</h1>
+<h1 th:insert="fragmento.html" style="color: lawngreen;text-align: center"> </h1>
+
+<!--<img src="images\prueba1.png" alt="imagen">-->
+<div class="container">
+
+</div>
+
+<h1 style="color: lawngreen;text-align: center">Ir a el portal de Usuarios</h1>
+
+<div style="align-items: center;margin-left: 45%; margin-top: 1%">
+  <a class="btn btn-dark"  style="color: lawngreen" th:href="@{/user}">Portal Usuarios</a>
+</div>
+
+
+<h1 style="color: lawngreen;text-align: center">Ir a el portal de Administradores</h1>
+<div style="align-items: center;margin-left: 43%; margin-top: 1%">
+  <a class="btn btn-dark" style="color: #09eeb6" th:href="@{/admin}">Portal Administradores</a>
+</div>
+
+<a class="btn btn-primary" style="align-items: center;margin-left: 49%; margin-top: 1%" th:href="@{/}"><i class="fa-solid fa-house"></i></a>
+
+
+
+
+<!-- Compiled and minified JavaScript -->
+<!--<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>-->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+</body>
+</html>

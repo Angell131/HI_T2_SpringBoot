@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <title>Title</title>
+</head>
+<body style="background-color: #212121;color: #fff;font-family: monospace, serif;letter-spacing: 0.05em;">
+<h1 style="color: lawngreen">Creación de una nueva tarea</h1>
+<h1 style="color: lawngreen" th:insert="fragmento.html"> </h1>
+<form th:action="@{/actualizarTarea}" th:object="${tarea}" method="post">
+  <fieldset><legend  style="color: lawngreen">Creación tarea: </legend>
+    <table>
+      <tr>
+        <td><label class="form-label" style="color: lawngreen">Nombre: </label></td>
+        <td><input type="text" class="form-control" th:field="*{nombre}" /></td>
+      </tr>
+      <tr>
+        <td><label class="form-label" style="color: lawngreen">Descripción: </label></td>
+        <td><input type="text" class="form-control" th:field="*{descripcion}" /></td>
+      </tr>
+      <tr>
+        <td><label class="form-label" style="color: lawngreen">Estado(1=Nueva,2=En progreso,3=Finalizada): </label></td>
+        <td><input type="number" class="form-control" placeholder="0 o 1" min="0" max="1" th:field="*{estado}" /></td>
+      </tr>
+      <tr>
+        <td>
+          <button class="btn btn-primary" type="submit">Guardar nueva tarea</button>
+        </td>
+      </tr>
+    </table>
+  </fieldset>
+</form>
+<a class="btn btn-success" th:href="@{/login}">Log in</a>
+<a class="btn btn-danger" th:href="@{/logout}">Log out</a>
+<a class="btn btn-primary" th:href="@{/}"><i class="fa-solid fa-house"></i></a>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+</body>
+</html>

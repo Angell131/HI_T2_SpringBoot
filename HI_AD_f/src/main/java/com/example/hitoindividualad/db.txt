@@ -1,0 +1,47 @@
+drop database tareas;
+
+create database tareas;
+
+create table Usuario (
+	NIF char(9) primary key,
+    nombre varchar(30),
+    apellidos varchar(50),
+    pw varchar(200),
+    Activo tinyint
+);
+
+CREATE TABLE ROLES (
+	id int auto_increment primary key,
+	NIF char(9),
+	foreign key (nif) references usuario(nif),
+	ROL varchar(50) NOT NULL
+);
+
+insert into ROLES (NIF, ROL)
+  (SELECT NIF, 'USUARIO' FROM USUARIO);
+
+  create table tarea (
+	id int primary key auto_increment,
+    nombre varchar(200),
+    descripcion varchar(1000),
+    estado tinyint,
+    -- 1 nueva, 2 en proceso, 3 terminada, 4 eliminada
+	NIF char(9),
+    foreign key (nif) references usuario(nif)
+  );
+  drop table tarea;
+
+  create table tarea (
+	id int auto_increment primary key,
+    nombre varchar(200),
+    descripcion varchar(1000),
+    estado tinyint,
+    -- 1 nueva, 2 en proceso, 3 terminada, 4 eliminada
+	NIF char(9),
+    foreign key (nif) references usuario(nif)
+  );
+
+INSERT INTO `tareas`.`tarea` ( `nombre`, `descripcion`, `estado`, `NIF`) VALUES ('Realizar tarea 1', 'Aplicacion de gestion de tareas', '1', '11111111B');
+INSERT INTO `tareas`.`tarea` (`id`, `nombre`, `descripcion`, `estado`, `NIF`) VALUES (null, 'Comprar Ps5', 'Pedir presupuesto', '2', '22222222C');
+INSERT INTO `tareas`.`tarea` (`id`, `nombre`, `descripcion`, `estado`, `NIF`) VALUES (null, 'Preparar Macarrones', 'Comprar Tomate', '2', '22222222C');
+INSERT INTO `tareas`.`tarea` (`id`, `nombre`, `descripcion`, `estado`, `NIF`) VALUES (null, 'Hechar a valverde', 'Sacarlo de clase', '2', '11111111B');
